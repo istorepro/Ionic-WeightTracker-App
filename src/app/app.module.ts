@@ -9,11 +9,14 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ComponentsModule } from '../components/components.module';
+import { WeightListComponent } from '../components/weight-list/weight-list';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    WeightListComponent
   ],
   imports: [
     BrowserModule,
