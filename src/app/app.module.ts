@@ -3,6 +3,16 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from '@angular/http';
+
+//Import native file
+import { File } from '@ionic-native/file';
+
+//Import native fileChooser
+import { FileChooser } from '@ionic-native/file-chooser';
+
+// Import data import
+import {DataImportComponent} from '../components/data-import/data-import';
 
 //Import sqlite storage
 import { IonicStorageModule } from '@ionic/storage';
@@ -13,12 +23,14 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    DataImportComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,6 +40,9 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    FileChooser,
+
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
