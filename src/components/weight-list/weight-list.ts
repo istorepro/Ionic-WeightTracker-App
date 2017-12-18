@@ -13,14 +13,18 @@ import { WEIGHTS, WeightEntry } from '../../data/mock-data';
 })
 export class WeightListComponent {
 
-  text: string;
   weights: WeightEntry[];
 
   constructor() {
-    console.log('Hello WeightListComponent Component');
-    this.text = 'Hello World';
-
     this.weights = WEIGHTS;
+
+    this.weights.forEach(element => {
+      console.log(
+        `
+        date:  ${element.date}
+        weight: ${element.weight}`
+      );
+    });
   }
 
 }
