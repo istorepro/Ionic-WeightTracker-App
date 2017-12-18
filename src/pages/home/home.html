@@ -7,15 +7,17 @@
       <button ion-button icon-only (click)="downloadCSV()">
           <ion-icon name="download"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="DataImportComponent.launchFilePicker()">
+      <!-- <button ion-button icon-only (click)="DataImportComponent.launchFilePicker()">
         <ion-icon name="cube"></ion-icon>
-      </button>
+      </button> -->
     </ion-buttons>
   </ion-navbar>
 </ion-header>
  
 <ion-content padding>
+
   <ion-scroll scrollX="true" scrollY="true" class="data-scroll">
+      <data-import></data-import>
     <table border="1" class="data-table">
       <tr>
         <td *ngFor="let header of headerRow" text-center><b>{{ header }}</b></td>
